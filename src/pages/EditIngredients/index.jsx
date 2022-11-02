@@ -15,11 +15,16 @@ export function EditIngredients(){
 
   const {updateIngredientImg} = useAuth()
 
-  const [data,setData] = useState([])
   const [text,setText] = useState(false)
   const [ingredientImg,setIngredientImg] = useState(null)
   const [ingredient,setIngredient] = useState()
-
+  async function handleDelete(){
+    const confirm = window.confirm("Deseja realmente deletar este prato")
+    if ( confirm){
+      await api.delete(`ingredients/${params.id}`)
+      navigate("/")
+    }
+  }
   async function handleUpdate(){
     if(params.id == 0){
       const response = await api.post('/ingredients',{
@@ -31,8 +36,7 @@ export function EditIngredients(){
       alert('Ingrediente criado!')
     }
     else{
-      console.log('else')
-      console.log(ingredient)
+
       const response = await api.put(`/ingredients/${params.id}`,{
         ingredient
       })
@@ -55,7 +59,7 @@ export function EditIngredients(){
       }
       else{
         const response = await api.get(`/ingredients/${params.id}`)
-        setData(response.data)
+
       }
     }
     getIngredients()
@@ -73,6 +77,11 @@ export function EditIngredients(){
         <Input placeholder="Nome do Ingrediente"
         onChange={e => setIngredient(e.target.value)}
         />
+        {text && <Button 
+        title="deletar ingrediente ingrediente" 
+        id="delete_ingredient_button" 
+        onClick={handleDelete}
+        />}
         <Button 
         title="Adicionar ingrediente" 
         id="add_ingredient_button" 
