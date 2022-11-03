@@ -20,17 +20,17 @@ export function OrderDetail(){
           <MiniOrder title="Salada Molla" 
           number="1"
           price="25,39"
-          img="src/assets/molla.png"
+          img="https://i.ibb.co/VT49VKz/molla.png"
           />
           <MiniOrder title="Salada Molla" 
           number="1"
           price="25,39"
-          img="src/assets/molla.png"
+          img="https://i.ibb.co/VT49VKz/molla.png"
           />
           <MiniOrder title="Salada Molla" 
           number="1"
           price="25,39"
-          img="src/assets/molla.png"
+          img="https://i.ibb.co/VT49VKz/molla.png"
           />
           <h2>Total: 103,88</h2>
           <Link to='/orders/2'><p> Mais Pedidos</p></Link>
