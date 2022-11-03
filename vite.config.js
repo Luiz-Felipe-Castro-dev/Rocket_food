@@ -11,7 +11,6 @@ export default {
     build:{
       rollupOptions:{
         external:['node_modules/styled-components/dist/styled-components.browser.esm.js'],
-        outDir:'build',
       }
     }
     //node_modules/styled-components/dist/styled-components.browser.esm.js
