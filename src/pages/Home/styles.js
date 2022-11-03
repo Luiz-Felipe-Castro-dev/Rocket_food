@@ -103,7 +103,7 @@ main .head_food p{
 
 }
 >footer{
-  margin-top: 1000px;
+  margin-top: 100px;
   ${media.desktop}{
     margin-top: unset;
   }

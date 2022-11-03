@@ -47,7 +47,7 @@ export function Home(){
       setIsIngredient={setIsIngredient}/>
       <main>
         <div className="head_food">
-          <img src="src/assets/food.png" alt="Imagem de comida voando" id="header_img"/>
+          <img src="https://i.ibb.co/ZzqkCZk/food.png" alt="Imagem de comida voando" id="header_img"/>
           <h1>Sabores inigualáveis</h1>
           <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
         </div>

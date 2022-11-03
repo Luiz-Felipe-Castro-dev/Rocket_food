@@ -15,7 +15,7 @@ export function EditIngredients(){
 
   const {updateIngredientImg} = useAuth()
 
-  const [text,setText] = useState(false)
+  const [isCreating,setIsCreating] = useState(false)
   const [ingredientImg,setIngredientImg] = useState(null)
   const [ingredient,setIngredient] = useState()
   async function handleDelete(){
@@ -55,7 +55,7 @@ export function EditIngredients(){
   useEffect(() =>{
     async function getIngredients(){
       if(params.id == 0){
-        setText(true)
+        setIsCreating(true)
       }
       else{
         const response = await api.get(`/ingredients/${params.id}`)
@@ -68,7 +68,7 @@ export function EditIngredients(){
     <Container>
       <Header />
       <main>
-        <h1>{text ?"Criador de ingredientes" : "Editor de ingredientes"}</h1>
+        <h1>{isCreating ?"Criador de ingredientes" : "Editor de ingredientes"}</h1>
         <Input placeholder="selecione uma imagem" 
             type="file" 
             id="plate_image"
@@ -77,16 +77,18 @@ export function EditIngredients(){
         <Input placeholder="Nome do Ingrediente"
         onChange={e => setIngredient(e.target.value)}
         />
-        {text && <Button 
-        title="deletar ingrediente ingrediente" 
-        id="delete_ingredient_button" 
-        onClick={handleDelete}
-        />}
-        <Button 
-        title="Adicionar ingrediente" 
-        id="add_ingredient_button" 
-        onClick={handleUpdate}
+        <div className="buttons">
+          {!isCreating && <Button 
+          title="Deletar ingrediente" 
+          id="delete_ingredient_button" 
+          onClick={handleDelete}
+          />}
+          <Button 
+          title={isCreating?"Adicionar ingrediente":"Editar ingrediente"} 
+          id="add_ingredient_button" 
+          onClick={handleUpdate}
         />
+        </div>
       </main>
       <Footer />
     </Container>

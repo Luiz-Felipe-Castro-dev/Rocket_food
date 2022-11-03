@@ -4,7 +4,7 @@ export const Container = styled.div`
 >main{
   display: flex;
   gap: 50px;
-  padding: 34px  196px 168px 123px;
+  padding: 34px  196px 50px 123px;
 
 }
 >main .pedidos{

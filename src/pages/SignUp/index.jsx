@@ -1,14 +1,13 @@
 import {Container,Form} from "./styles"
 
 import { Input } from "../../components/Input"
-
 import { Button } from "../../components/Button"
-
 import { ButtonText } from "../../components/ButtonText"
 
-import { useState,useEffect } from "react"
-import { api } from "../../services/api"
+import { useState } from "react"
 import { Link } from "react-router-dom"
+
+import { api } from "../../services/api"
 
 export function SignUp(){
   const [name,setName] = useState()
@@ -27,15 +26,6 @@ export function SignUp(){
       alert("Usuário cadastrado com sucesso")
       navigate("/");
     })
-    // .catch(error =>{
-    //   if(error.response){
-    //     alert(error.response.data.message)
-    //   }
-    //   else{
-    //     alert("não foi possível cadastrar")
-    //   }
-    // })
-
   }
   
   return (
@@ -49,11 +39,15 @@ export function SignUp(){
       <Form>
         <h1>Crie sua conta</h1>
         
-        <Input placeholder="Exemplo: Maria da Silva" title="Seu nome"
+        <Input placeholder="Exemplo: Maria da Silva" 
+        title="Seu nome"
         onChange={e => setName(e.target.value)}/>
-        <Input placeholder="Exemplo: exemplo@exemplo.com.br" title="Email"
+        <Input placeholder="Exemplo: exemplo@exemplo.com.br" 
+        title="Email"
         onChange={e => setEmail(e.target.value)}/>
-        <Input placeholder="No mínimo 5 caracteres" title="Senha"
+        <Input placeholder="No mínimo 5 caracteres" 
+        title="Senha"
+        type="password"
         onChange={e => setPassword(e.target.value)}/>
 
         <Button title="Criar conta" id="button" onClick={handleSignUp}/>

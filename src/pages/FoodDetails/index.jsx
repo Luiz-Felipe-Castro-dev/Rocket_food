@@ -6,9 +6,9 @@ import { ButtonText } from "../../components/ButtonText";
 
 import { Ingredient } from "../../components/Ingredient";
 
-import {AiOutlineArrowLeft} from 'react-icons/ai';
+import {TbReceipt} from "react-icons/tb";
 
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useState,useEffect } from "react";
 
 import { api } from "../../services/api.js";
@@ -16,6 +16,7 @@ import { api } from "../../services/api.js";
 import { useAuth } from "../../hooks/auth.jsx";
 
 import { Link } from "react-router-dom";
+import { Button } from "../../components/Button/index.jsx";
 
 
 
@@ -31,8 +32,6 @@ export function FoodDetails(){
 
   const params = useParams();
 
-
-  const navigate = useNavigate();
   useEffect(() =>{
     async function fetchfood(){
       const response = await api.get(`foods/${params.id}`);
@@ -40,7 +39,6 @@ export function FoodDetails(){
       setData(response.data);
 
       setIngredients(response.data.ingredients.split(","),response);
-      console.log('ingredients', ingredients)
 
      
       // this line checks that the array isn't empty
@@ -96,6 +94,7 @@ export function FoodDetails(){
           </div>
           <div className="include">
             <p className="price">R$ {data && data.price}</p>
+            <Button title='incluir' id="incluir" icon={TbReceipt}/>
           </div>  
           {IsAdminAuth && 
             <Link to={`/edit/${data.id}`}>

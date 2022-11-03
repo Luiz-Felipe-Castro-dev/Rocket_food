@@ -5,7 +5,6 @@ import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 
 import { Link } from "react-router-dom"
-
 import { useState } from "react";
 
 import { useAuth } from "../../hooks/auth";
@@ -38,7 +37,7 @@ export function SignIn(){
         <Input 
         placeholder="No mínimo 5 caracteres" 
         title="Senha"
-        // type='password'
+        type='password'
         onChange={e => setPassword(e.target.value)}
         />
 

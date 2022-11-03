@@ -9,13 +9,24 @@ background: ${({theme}) => theme.COLORS.HEADER_BACKGROUND};
 
 
 width: 100%;
+min-height: 65px;
+
+${media.desktop}{
+  height: unset;
+}
 
 display: flex;
 flex-direction: column;
 justify-content: center ;
 
 align-items: center;
-
+#search{
+  width: 183px;
+  margin-top: 12px;
+  ${media.desktop}{
+    margin-top: unset;
+  }
+}
 ${media.desktop}{
   flex-direction: row;
   justify-content: unset;
@@ -51,7 +62,9 @@ ${media.desktop}{
   }
 }
 >#logo_link{
+
   ${media.desktop}{
+
     display: flex;
     height: 80px;
   }
@@ -95,8 +108,8 @@ ${media.desktop}{
 >#close.expanded{
   display: block;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25px;
+  right: 25px;
 }
 >#close.hidden{
   display: none;
@@ -105,8 +118,8 @@ ${media.desktop}{
 >#open.expanded{
   display: block;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25px;
+  right: 25px;
 }
 >#open.hidden{
   display: none;

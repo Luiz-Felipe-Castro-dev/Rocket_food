@@ -18,10 +18,10 @@ border-color: #192227;
   justify-content: center;
   align-items: center;
   gap: 32px;
-  /* it doesn't work as expected overflow-y: scroll; */
+
 }
 >main table{
-  /* width: 100%; */
+
   border-collapse: collapse;
   border-color: ${({theme}) => theme.COLORS.TABLE_BORDER} ;
   border-width: 2px;
@@ -41,5 +41,8 @@ border-color: #192227;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+>footer{
+  margin-top: 80px;
 }
 `

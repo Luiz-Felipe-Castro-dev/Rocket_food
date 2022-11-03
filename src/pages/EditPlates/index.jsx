@@ -35,7 +35,7 @@ export function EditPlates(){
 
   const [isSelected,setIsSelected] = useState(false)
 
-  const [text,setText] = useState(false)
+  const [isCreating,setIsCreating] = useState(false)
   
   async function handleUpdate(){
    
@@ -101,7 +101,7 @@ export function EditPlates(){
   }
   useEffect(()=>{
     if(params.id == 0){
-      setText(true)
+      setIsCreating(true)
     }
     async function fetchIngredients(){
       const response = await api.get('/ingredients')
@@ -120,7 +120,7 @@ export function EditPlates(){
       <Header/>
       <form>
         <ButtonText title="Voltar" icon={IoIosArrowBack}/>
-        <h1>{text ?"Criador de pratos":"Editor de pratos"}</h1>
+        <h1 id="main_title">{isCreating ?"Criador de pratos":"Editor de pratos"}</h1>
         <div className="line_1">
           <div id="plate_image_div">
             <h1>Imagem do prato</h1>
@@ -169,20 +169,22 @@ export function EditPlates(){
         <h1>Descrição</h1>
         <textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
         onChange={e => setDescription(e.target.value)}/>
-        <select name="category"
+        <select name="category" id="category"
         onChange={e => setCategory(e.target.value)}
         >
-          <option >Selecione um valor</option>
+          <option >Selecione uma categoria</option>
           <option value="dessert">Sobremesa</option>
           <option value="main">Prato Principal</option>
           <option value="drink">Bebidas</option>
         </select>
-        {!text && <Button title="deletar" onClick={handleDelete}/>}
+        <div className="buttons">
+        {!isCreating && <Button title="deletar" onClick={handleDelete}/>}
         <Button 
-        title="Adicionar prato" 
+        title={isCreating ?"Adicionar prato":"Editar prato"} 
         id="add_plate_button" 
         onClick={handleUpdate}
         />
+        </div>
 
       </form>
       <Footer/>

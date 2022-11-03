@@ -19,7 +19,7 @@ border-color: #192227;
 >main{
   padding: 30px 50px 0px 50px;
   overflow-y: scroll;
-  /* it doesn't work as expected overflow-y: scroll; */
+
 }
 >main table{
   width: 100%;

@@ -1,7 +1,15 @@
 import styled from "styled-components";
-
+const media = {
+  desktop: '@media(min-width:1000px)'
+}
 export const Container = styled.div`
-
+.buttons{
+  display: flex;
+  margin-block: 30px;
+}
+.buttons :first-child{
+ width: 30%;
+}
 >form{
   margin: 32px 120px auto 120px;
 
@@ -68,6 +76,12 @@ form h1{
 >form textarea::placeholder{
   color:${({theme}) => theme.COLORS.INPUT_TEXT_PLACEHOLDER};
 }
+#main_title{
+  font-size: 32px;
+  font-family: 'Poppins';
+  color: ${({theme}) => theme.COLORS.ORDER_TITLE};
+  margin-block: 20px;
+}
 #add_plate_button{
   background-color: #FFFFFF1A;
   opacity: 0.8;
@@ -89,5 +103,12 @@ form h1{
 }
 >form .line_2 .checkboxes label{
   display: block;
+}
+#category{
+  margin-block: 10px;
+  width: 200px;
+  height: 36px;
+  background-color: lightblue;
+
 }
 `
