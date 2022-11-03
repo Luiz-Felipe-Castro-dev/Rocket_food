@@ -1,14 +1,12 @@
 import {Container} from "./styles.js"
 
 import { Header } from "../../components/Header"
-
 import { Footer } from "../../components/Footer"
 
 import { useState,useEffect } from "react"
+import { useParams } from "react-router-dom";
 
 import { api } from '../../services/api.js';
-
-import { useParams } from "react-router-dom";
 
 
 export function Orders(){
@@ -23,7 +21,6 @@ export function Orders(){
   useEffect(() => {
 
     async function fetchFoods(){
-      console.log(params.number)
       if(params.number == 1 ){
         const response = await api.get(`/adminorders`);
         setOrders(response.data)
@@ -54,7 +51,7 @@ export function Orders(){
 
                     <tr key={order.id}>
                       <td><div><span style={{backgroundColor: colors[order.order_status]}}></span>
-                       {order.order_status}</div></td>
+                      &nbsp; &nbsp;{order.order_status}</div></td>
                       <td>{order.id}</td>
                       <td>{order.foods}</td>
                       <td>{order.created_at}</td>
@@ -67,21 +64,14 @@ export function Orders(){
 
                 <tr key={order.id}>
                   <td><div><span style={{backgroundColor: colors[order.order_status]}}></span> 
-                  {order.order_status}</div></td>
+                  &nbsp; &nbsp;{order.order_status}</div></td>
                   <td>{order.id}</td>
                   <td>{order.foods}</td>
                   <td>{order.created_at}</td>
                 </tr>
               )} 
               )
-            }
-             {/* <tr>
-                  <td><div><span ></span> oi</div></td>
-                  <td>oi</td>
-                  <td>oi</td>
-                  <td>oi</td>
-                </tr> */}
-             
+            }             
           </tbody>
         </table>
       </main>

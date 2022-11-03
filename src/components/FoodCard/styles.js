@@ -33,5 +33,7 @@ export const Container = styled.div`
 >.card  .botaun{
   height: 48px;
 }
-
+>.card .price{
+  color: ${({theme}) => theme.COLORS.PRICE_TEXT};
+}
 `

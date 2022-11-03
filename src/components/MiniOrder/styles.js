@@ -21,7 +21,7 @@ export const Container= styled.div`
 }
 >.flex .info p{
 
-  color: red;
+  color: ${({theme}) => theme.COLORS.DELETE_BUTTON};
 }
 >.flex .info h2 span{
   font-size: 12px;

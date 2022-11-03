@@ -13,6 +13,10 @@ export const Container = styled.div`
 >main .pedidos h1{
   margin-bottom: 48px;
 }
+>main .pedidos a p{
+  margin-top: 30px;
+  color: ${({theme}) => theme.COLORS.GENERAL_TEXT};
+}
 >main .pagamento .payment_table{
   width: 530px;
   height:  288px;

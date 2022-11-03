@@ -42,5 +42,6 @@ border-color: #192227;
   padding: 10px;
   border: 1px solid white;
   border-radius: 5px;
+  overflow-x: hidden;
 }
 `

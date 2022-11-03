@@ -26,7 +26,7 @@ export function Admin(){
       <Header/>
       <main>
 
-        <h1>links das areas admins</h1>
+        <h1>Links das areas admins</h1>
         <p onClick={() => handleDetails(1)}>todos os pedidos</p>
         <Link to='/ingredients'>
           <p>ingredientes</p>

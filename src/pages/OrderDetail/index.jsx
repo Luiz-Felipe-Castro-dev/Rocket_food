@@ -17,13 +17,23 @@ export function OrderDetail(){
       <main>
         <div className="pedidos">
           <h1>Meu pedido</h1>
-          <MiniOrder title="Torradas de parma" 
+          <MiniOrder title="Salada Molla" 
           number="1"
           price="25,39"
-          img="src/assets/almonds.png"
+          img="src/assets/molla.png"
+          />
+          <MiniOrder title="Salada Molla" 
+          number="1"
+          price="25,39"
+          img="src/assets/molla.png"
+          />
+          <MiniOrder title="Salada Molla" 
+          number="1"
+          price="25,39"
+          img="src/assets/molla.png"
           />
           <h2>Total: 103,88</h2>
-          <Link to='/orders/2'>Mais Pedidos</Link>
+          <Link to='/orders/2'><p> Mais Pedidos</p></Link>
         </div>
         <div className="pagamento">
           <h1>Pagamento</h1>

@@ -55,9 +55,10 @@ ${media.desktop}{
 >h1{
   color: ${({theme}) => theme.COLORS.WHITE};
   font-family: 'Poppins', sans-serif;
+  margin-block: 32px;
 }
->#buttonText{
-  margin-top: 15px;
+#buttonText{
+  margin-block: 32px;
 }
 
 `

@@ -13,6 +13,8 @@ export const Container = styled.div`
   }
 }
 >main div #header_img{
+
+  width: 90%;
   ${media.desktop}{
 
     position: absolute;
@@ -25,7 +27,16 @@ export const Container = styled.div`
   
 }
 >main .head_food{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-block: 32px;
   ${media.desktop}{
+    gap: unset;
+    align-items: unset;
+    justify-content: unset;
 
     position: relative;
     height: 260px;
@@ -38,13 +49,20 @@ export const Container = styled.div`
 }
 >main .head_food h1,
 main .head_food p{
+  padding-inline: 35px;
   ${media.desktop}{
 
-    
-      margin-left: 597px;
-      display: block;
+    padding-inline: unset;
+    margin-left: 597px;
+    display: block;
   }
 
+}
+>main .head_food p{
+  padding-inline: 55px;
+  ${media.desktop}{
+    padding-inline: unset;
+  }
 }
 >main .head_food h1{
   ${media.desktop}{
@@ -55,6 +73,8 @@ main .head_food p{
   }
 }
 >main h1{
+  margin-block: 40px;
+  margin-left: 25px;
   ${media.desktop}{
 
     margin-top: 62px;
@@ -62,19 +82,15 @@ main .head_food p{
 
 }
 .rec-pagination{
-  ${media.desktop}{
+  display: none;
 
-    display: none;
-  }
 
 }
 .rec-arrow{
-  ${media.desktop}{
-
-    background-color:transparent;
+  background-color:transparent;
     box-shadow: none;
     color: white;
-  }
+
 
 }
 .rec-arrow:hover{
@@ -85,5 +101,11 @@ main .head_food p{
     box-shadow: none;
   }
 
+}
+>footer{
+  margin-top: 1000px;
+  ${media.desktop}{
+    margin-top: unset;
+  }
 }
 `

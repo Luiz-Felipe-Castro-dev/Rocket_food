@@ -56,8 +56,10 @@ ${media.desktop}{
   color: ${({theme}) => theme.COLORS.WHITE};
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  margin-block: 32px;
 }
->#buttonText{
-  margin-top: 15px;
+#buttonText{
+  margin-block: 32px;
 }
+
 `;

@@ -75,28 +75,34 @@ export function FoodDetails(){
     <Container>
       <Header/>
       <main>
-        {IsAdminAuth && 
+
+        <img src={data && `${api.defaults.baseURL}/files/${data.food_img}`} alt="imagem de comida" />
+        <div className="right">
+          <h1>{data && data.food_name}</h1>
+          <p>
+            {data && data.description}
+          </p>
+
+          <div id="ingredients">
+            {ingredientsObject && ingredientsObject.map(ingredient => (          
+                <Ingredient
+                key={ingredient.data.id}
+                title={ingredient.data.ingredient}
+                // this line doesnt work because i haven't set up the back end
+                img={data &&`${api.defaults.baseURL}/files/${ingredient.data.ingredient_img}`}
+                />
+              ))
+            }
+          </div>
+          <div className="include">
+            <p className="price">R$ {data && data.price}</p>
+          </div>  
+          {IsAdminAuth && 
             <Link to={`/edit/${data.id}`}>
               <ButtonText title='Editar prato'/>
-            </Link>}
-        <img src={data && `${api.defaults.baseURL}/files/${data.food_img}`} alt="imagem de comida" />
-        <h1>{data && data.food_name}</h1>
-        <p>
-          {data && data.description}
-        </p>
-        <p>{data && data.price}</p>
-        <div id="ingredients">
-          {ingredientsObject && ingredientsObject.map(ingredient => (          
-              <Ingredient
-              key={ingredient.data.id}
-              title={ingredient.data.ingredient}
-              // this line doesnt work because i haven't set up the back end
-              img={data &&`${api.defaults.baseURL}/files/${ingredient.data.ingredient_img}`}
-              />
-            ))
+            </Link>
           }
-
-        </div>      
+        </div>    
       </main>
       <Footer/>
     </Container>
