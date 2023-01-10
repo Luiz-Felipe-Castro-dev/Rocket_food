@@ -1,8 +1,8 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { ButtonText } from "../../components/ButtonText";
 
-import {IoIosArrowBack} from "react-icons/io"
+
+
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";

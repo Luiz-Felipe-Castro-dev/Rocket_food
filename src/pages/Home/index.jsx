@@ -4,7 +4,7 @@ import { Header} from "../../components/Header"
 import { FoodCard } from "../../components/FoodCard"
 import { Footer } from "../../components/Footer"
 
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 import { useEffect,useState } from "react"
 

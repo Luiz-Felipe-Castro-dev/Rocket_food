@@ -15,24 +15,24 @@ import { useAuth } from "../../hooks/auth.jsx";
 import { useEffect } from "react";
 
 
-export function Header({setSearch = () => {},search,isIngredient,setIsIngredient}){
+export function Header({setSearch = () => {},isIngredient,setIsIngredient}){
   const {user,signOut} = useAuth()
 
   const [IsAdminAuth,setAdminAuth] = useState(false);
   const [isExpanded,setIsExpanded] = useState(true);
   useEffect(() =>{
 
-    if(user){
-        if(user.isAdmin == 1){
+
+        if(user && user.isAdmin == 1){
         setAdminAuth(true)
   
       }
-    }
+
 
   },[])
 
   return (
-      <Container  >
+      <Container>
         <Link to='/' id="logo_link">
           <div id="logo">      
             <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
