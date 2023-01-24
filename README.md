@@ -20,7 +20,7 @@ As tecnologias usadas no projeto foram:
     - knex
     - pm2
     - cors
-    - heroku
+    - render
     
     
 E claro, alem disso tudo foi usado o javascript. Para executar este front end como dev, primeiro rode o comando npm install, depois rode o comando npm run dev. 
