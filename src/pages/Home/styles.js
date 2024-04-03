@@ -21,7 +21,7 @@ export const Container = styled.div`
     width: 632px;
     height: 406px;
     bottom:0.1px;
-    right: 536px;
+    left: 1%;
   }
     
   
